@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="EN" xml:lang="en">
+    <head>  
+        <title>PHP login system</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel = "stylesheet" type = "text/css" href = "login.css">
+        <script>  
+            function validation()  
+            {  
+                var id=document.f1.user.value;  
+                var ps=document.f1.pass.value;  
+                if(id.length=="" && ps.length=="") { //Alert tab to show both are empty
+                    alert("User Name and Password fields are empty");
+                    return false;
+                }
+                else
+                {  
+                    if(id.length=="") {  
+                        alert("User Name is empty"); //Alert tab to show username is empty
+                        return false;  
+                    }   
+                    if (ps.length=="") {  
+                    alert("Password field is empty"); //Alert tab to show password is empty
+                    return false;  
+                    }  
+                }                             
+            }
+        </script>
+    </head>  
+    <body>  
+        <div id = "frm">  <!-- Division to place login format in the page--> 
+            <h1>Login</h1>
+            <form name="f1" action = "authentication.php" onsubmit = "return validation()" method = "POST"> <!--Form used to get credentials-->  
+                <p>  
+                    <label> UserName: </label>  
+                    <input type = "text" id ="user" name  = "user" /> <!--Input tag to get username -->
+                </p>  
+                <p>  
+                    <label> Password: </label>
+                    <input type = "password" id ="pass" name  = "pass" /> <!--Input tag to get password -->
+                </p>
+                <p>
+                    <label> Student: </label>
+                    <input type="radio" name = "type" value="1" placeholder="Student"/> <!-- Radiobutton to get student type -->
+                    <label> Lecturer: </label>
+                    <input type="radio" name = "type" value="0" placeholder="Lecturer"/> <!-- Radiobutton to get lecturer type -->
+                </p>
+                <p>     
+                    <input type =  "submit" name = "login" id = "btn" value = "Login" /> <!-- Submit button to login -->
+                </p>  
+            </form>  
+        </div>  
+    </body>     
+</html>
